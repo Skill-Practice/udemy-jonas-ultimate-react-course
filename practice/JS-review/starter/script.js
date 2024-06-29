@@ -184,3 +184,7 @@ const updatedBookOneByOne = {
   pages: 1210,
 };
 updatedBookOneByOne;
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate}, ${publicationDate.split("-")}, ${publicationDate.split("-")[0]}`;
+
+summary
