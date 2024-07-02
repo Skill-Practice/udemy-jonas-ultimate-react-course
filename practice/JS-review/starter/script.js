@@ -175,20 +175,30 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 // updatedBook;
 
 // const updatedBookOneByOne = {
-  // pages: 1210,
-  // ...book,
-  // Adding a new property
-  // moviePublicationDate: "2001-12-19",
+// pages: 1210,
+// ...book,
+// Adding a new property
+// moviePublicationDate: "2001-12-19",
 
-  // Overwriting an existing property
-  // pages: 1210,
+// Overwriting an existing property
+// pages: 1210,
 // };
 // updatedBookOneByOne;
 
-// const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate}, ${publicationDate.split("-")}, ${publicationDate.split("-")[0]}`;
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
 
-// summary
+const getYear = (str) => str.split("-")[0];
 
-const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
-pagesRange
-console.log(`The book has ${pagesRange} pages`)
+console.log(getYear(publicationDate));
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${getYear(publicationDate)}, ${publicationDate.split(
+  "-"
+)}, ${publicationDate.split("-")[0]}`;
+
+summary;
+
+// const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+// pagesRange
+// console.log(`The book has ${pagesRange} pages`)
