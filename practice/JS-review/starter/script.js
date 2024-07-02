@@ -135,56 +135,60 @@ const data = [
   },
 ];
 
-function getBooks() {
-  return data;
-}
+// function getBooks() {
+//   return data;
+// }
 
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-// Destructuring
+// // Destructuring
 
 const book = getBook(1);
 
-// const title = book.title;
-// const author = book.author;
+// // const title = book.title;
+// // const author = book.author;
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
-// console.log(author, title, genres);
+// // console.log(author, title, genres);
 
-// const primaryGenre = genres[0];
-// const secondaryGenre = genres[1];
+// // const primaryGenre = genres[0];
+// // const secondaryGenre = genres[1];
 
-// const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+// // const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
-// console.log(primaryGenre, secondaryGenre, otherGenres);
+// // console.log(primaryGenre, secondaryGenre, otherGenres);
 
-// const books = getBooks();
-// books;
+// // const books = getBooks();
+// // books;
 
-const newGenres = ["epic fantasy", genres];
-newGenres;
+// const newGenres = ["epic fantasy", genres];
+// newGenres;
 
-const newGenresGenresOneByOne = ["epic fantasy", ...genres];
-newGenresGenresOneByOne;
+// const newGenresGenresOneByOne = ["epic fantasy", ...genres];
+// newGenresGenresOneByOne;
 
-const updatedBook = { book, moviePublicationDate: "2001-12-19" };
-updatedBook;
+// const updatedBook = { book, moviePublicationDate: "2001-12-19" };
+// updatedBook;
 
-const updatedBookOneByOne = {
+// const updatedBookOneByOne = {
   // pages: 1210,
-  ...book,
+  // ...book,
   // Adding a new property
-  moviePublicationDate: "2001-12-19",
+  // moviePublicationDate: "2001-12-19",
 
   // Overwriting an existing property
-  pages: 1210,
-};
-updatedBookOneByOne;
+  // pages: 1210,
+// };
+// updatedBookOneByOne;
 
-const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate}, ${publicationDate.split("-")}, ${publicationDate.split("-")[0]}`;
+// const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate}, ${publicationDate.split("-")}, ${publicationDate.split("-")[0]}`;
 
-summary
+// summary
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+pagesRange
+console.log(`The book has ${pagesRange} pages`)
