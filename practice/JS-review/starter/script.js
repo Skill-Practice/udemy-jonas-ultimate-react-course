@@ -290,20 +290,26 @@ books;
 // sortedByPages;
 
 // 1) Add book object to array
-const newBook = {
-  id: 6,
-  title: "Harry Potter and the Chamber of Secrets",
-  author: "J. K. Rowling",
-};
-const booksAfterAdd = [...books, newBook];
-booksAfterAdd;
+// const newBook = {
+//   id: 6,
+//   title: "Harry Potter and the Chamber of Secrets",
+//   author: "J. K. Rowling",
+// };
+// const booksAfterAdd = [...books, newBook];
+// booksAfterAdd;
 
-// 2) Delete book object from array
-const booksAfterAddDelete = booksAfterAdd.filter((book) => book.id !== 3);
-booksAfterAddDelete;
+// // 2) Delete book object from array
+// const booksAfterAddDelete = booksAfterAdd.filter((book) => book.id !== 3);
+// booksAfterAddDelete;
 
-// 3) Update book object in the array
-const booksAfterUpdate = booksAfterAddDelete.map((book) =>
-  book.id === 1 ? { ...book, pages: 1 } : book
-);
-booksAfterUpdate;
+// // 3) Update book object in the array
+// const booksAfterUpdate = booksAfterAddDelete.map((book) =>
+//   book.id === 1 ? { ...book, pages: 1 } : book
+// );
+// booksAfterUpdate;
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");
