@@ -251,18 +251,29 @@ function getTotalReviewCount(book) {
 const books = getBooks();
 books;
 
-const x = [1, 2, 3, 4, 5].map((el) => el * 2);
-console.log(x);
+// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+// console.log(x);
 
-const titles = books.map((book) => book.title);
-titles;
+// const titles = books.map((book) => book.title);
+// titles;
 
-// return or () = automatically return
-const essentialData = books.map((book) => ({
-  // return {
-  title: book.title,
-  author: book.author,
-  reviewsCount: getTotalReviewCount(book),
-  // };
-}));
-essentialData;
+// // return or () = automatically return
+// const essentialData = books.map((book) => ({
+//   // return {
+//   title: book.title,
+//   author: book.author,
+//   reviewsCount: getTotalReviewCount(book),
+//   // };
+// }));
+// essentialData;
+
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovie;
+
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+
+adventureBooks;
