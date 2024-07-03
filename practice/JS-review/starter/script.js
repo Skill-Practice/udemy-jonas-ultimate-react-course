@@ -267,13 +267,16 @@ books;
 // }));
 // essentialData;
 
-const longBooksWithMovie = books
-  .filter((book) => book.pages > 500)
-  .filter((book) => book.hasMovieAdaptation);
-longBooksWithMovie;
+// const longBooksWithMovie = books
+//   .filter((book) => book.pages > 500)
+//   .filter((book) => book.hasMovieAdaptation);
+// longBooksWithMovie;
 
-const adventureBooks = books
-  .filter((books) => books.genres.includes("adventure"))
-  .map((book) => book.title);
+// const adventureBooks = books
+//   .filter((books) => books.genres.includes("adventure"))
+//   .map((book) => book.title);
 
-adventureBooks;
+// adventureBooks;
+
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
