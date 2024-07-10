@@ -130,6 +130,8 @@ function Footer() {
   // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   // else alert("Sorry we're closed");
 
+  // if (!isOpen) return <p>CLOSED</p>
+
   return (
     <footer className="footer">
       {isOpen ? (
@@ -172,6 +174,8 @@ function Order({ closeHour, openHour }) {
 // function Pizza(props) {
 function Pizza({ pizzaObj }) {
   // console.log(props);
+
+  // if (pizzaObj.soldOut) return null;
 
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""} `}>
