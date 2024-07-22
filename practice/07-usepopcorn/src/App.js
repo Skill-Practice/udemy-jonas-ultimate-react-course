@@ -69,6 +69,16 @@ export default function App() {
           <WatchedSummary watched={watched} />
           <WatchedMoviesList watched={watched} />
         </Box>
+
+        {/* <Box element={<MovieList movies={movies} />} />
+        <Box
+          element={
+            <>
+              <WatchedSummary watched={watched} />
+              <WatchedMoviesList watched={watched} />
+            </>
+          }
+        /> */}
       </Main>
     </>
   );
@@ -118,6 +128,7 @@ function Main({ children }) {
   return <main className="main">{children}</main>;
 }
 
+// function Box({ element }) {
 function Box({ children }) {
   const [isOpen, setIsOpen] = useState(true);
 
