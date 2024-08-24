@@ -11,8 +11,8 @@ function AppLayout() {
   return (
     // <div className="layout">
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
-      {true && <Loader />}
-      {/* {isLoading && <Loader />} */}
+      {/* {true && <Loader />} */}
+      {isLoading && <Loader />}
 
       <Header />
 
