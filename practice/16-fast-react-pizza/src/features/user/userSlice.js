@@ -39,8 +39,9 @@ const userSlice = createSlice({
   },
 });
 
-console.log(userSlice);
+// console.log(userSlice);
 
 export const { updateName } = userSlice.actions;
 
 export default userSlice.reducer;
+ 
