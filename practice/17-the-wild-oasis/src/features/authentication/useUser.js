@@ -6,6 +6,7 @@ export function useUser() {
     queryKey: ["user"],
     queryFn: getCurrentUser,
   });
+
   return {
     isPending,
     user,
