@@ -11,9 +11,9 @@ function BookingTable() {
   // const bookings = [];
   const { bookings, isPending, count } = useBookings();
 
-  if (!bookings.length) return <Empty resourceName="bookings" />;
-
   if (isPending) return <Spinner />;
+
+  if (!bookings.length) return <Empty resourceName="bookings" />;
 
   return (
     <Menus>
