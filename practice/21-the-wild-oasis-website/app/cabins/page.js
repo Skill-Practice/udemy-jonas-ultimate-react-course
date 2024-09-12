@@ -1,4 +1,5 @@
 import Counter from "../components/Counter";
+import Loading from "../loading";
 
 export default async function Page() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
