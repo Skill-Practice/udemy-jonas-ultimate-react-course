@@ -1,4 +1,4 @@
-import { auth } from "../_lib/auth";
+import { auth } from "@/app/_lib/auth";
 
 export const metadata = {
   title: "Guest area",
@@ -6,6 +6,8 @@ export const metadata = {
 
 export default async function Page() {
   const session = await auth();
+  console.log(session);
+
   const firstName = session.user.name.split(" ").at(0);
 
   return (
