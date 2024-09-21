@@ -29,8 +29,11 @@ export async function updateGuest(formData) {
 }
 
 export async function deleteReservation(bookingId) {
+  await new Promise((res) => setTimeout(res, 2000));
+
   const session = await auth();
-  if (!session) throw new Error("You must be logged in");
+  // if (!session) throw new Error("You must be logged in");
+  // throw new Error();
 
   const guestBookings = await getBookings(session.user.guestId);
   const guestBookingIds = guestBookings.map((booking) => booking.id);
