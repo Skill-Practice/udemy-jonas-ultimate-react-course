@@ -28,11 +28,38 @@ export async function updateGuest(formData) {
   revalidatePath("/account/profile");
 }
 
-export async function deleteReservation(bookingId) {
+export async function createBooking(bookingData, formData) {
+  await new Promise((res) => setTimeout(res, 5000));
+
+  const session = await auth();
+  if (!session) throw new Error("You are not allowed to delete this booking");
+
+  const newBooking = {
+    ...bookingData,
+    guestId: session.user.guestId,
+    numGuests: Number(formData.get("numGuests")),
+    observations: formData.get("observations"),
+    extrasPrice: 0,
+    totalPrice: bookingData.cabinPrice,
+    isPaid: false,
+    hasBreakfast: false,
+    status: "unconcirmed",
+  };
+
+  const { error } = await supabase.from("bookings").insert([newBooking]);
+
+  if (error) throw new Error("Booking could not be created");
+
+  revalidatePath(`/cabins/${bookingData.cabinId}`);
+
+  redirect("/cabins/thankyou");
+}
+
+export async function deleteBooking(bookingId) {
   await new Promise((res) => setTimeout(res, 2000));
 
   const session = await auth();
-  // if (!session) throw new Error("You must be logged in");
+  if (!session) throw new Error("You must be logged in");
   // throw new Error();
 
   const guestBookings = await getBookings(session.user.guestId);
