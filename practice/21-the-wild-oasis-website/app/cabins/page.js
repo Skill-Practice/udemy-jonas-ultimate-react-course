@@ -16,7 +16,6 @@ export default function Page({ searchParams }) {
   // const cabins = [];
 
   const filter = searchParams?.capacity ?? "all";
-  console.log(filter);
 
   return (
     <div>
