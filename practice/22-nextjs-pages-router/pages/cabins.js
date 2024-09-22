@@ -6,7 +6,7 @@ export async function getStaticProps() {
   const cabins = await getCabins();
   console.log(cabins);
 
-  return { props: { cabins } };
+  return { props: { cabins }, revalidate: 3600 };
 }
 
 function Cabins({ cabins }) {
